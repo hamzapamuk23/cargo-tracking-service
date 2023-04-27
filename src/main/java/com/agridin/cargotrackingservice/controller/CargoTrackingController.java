@@ -16,7 +16,7 @@ public class CargoTrackingController {
     private SeleniumService seleniumService;
     
     @GetMapping("/deneme")
-    public void deneme(){
+    public void deneme() throws InterruptedException{
         seleniumService.deneme();
     }
 }
