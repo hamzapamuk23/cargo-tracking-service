@@ -1,5 +1,7 @@
 package com.agridin.cargotrackingservice.service;
 
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
 import com.agridin.cargotrackingservice.model.CargoTracking;
@@ -15,6 +17,12 @@ public class CargoTrackingService {
 
     public CargoTracking save(CargoTracking cargoTracking){
         return repository.save(cargoTracking);
+    }
+
+    public void deleteAllByOrder(UUID orderId){
+        if(repository.existsByOrder_Id(orderId)){
+            repository.deleteAllByOrder(orderId);
+        }
     }
 
 }
