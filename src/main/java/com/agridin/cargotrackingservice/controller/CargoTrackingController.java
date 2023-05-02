@@ -20,9 +20,9 @@ public class CargoTrackingController {
 
     private SeleniumAgridinService seleniumAgridinService;
 
-    @GetMapping("/deneme")
-    public void get(){
-        seleniumPttService.deneme();
+    @GetMapping("/gethCargoTracking")
+    public void gethCargoTracking(){
+        seleniumPttService.getCargoTracking();
     }
 
     @PostMapping("/post")

@@ -69,11 +69,10 @@ public class SeleniumAgridinService {
                     );
                 orderService.save(order);
             }
-            wait(500);
             getWebElementByXPath(browser, "//*[@id='example1_filter']/label/input").clear();
         }
         browser.close();
-        seleniumPttService.deneme();
+        seleniumPttService.getCargoTracking();
     }
 
     public WebElement getWebElementById(ChromeDriver browser,String value){

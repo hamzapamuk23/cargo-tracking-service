@@ -13,14 +13,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +34,7 @@ public class SeleniumPttService {
 
     private OrderService orderService;
 
-    public void deneme(){
+    public void getCargoTracking(){
         WebDriver browser = getWebDriver();
         browser.get("https://gonderitakip.ptt.gov.tr/");
         deneme2(browser);
@@ -66,7 +63,6 @@ public class SeleniumPttService {
                 searchButton.click();
                 String cargoState = getAttributeForInnerText(getWebElementByXPath(browser, "/html/body/main/div/div[1]/div[2]/b/h8"));
                 orderService.setState(order,cargoState);
-
                 List<WebElement> trList = getWebElementByXPath(browser, "//*[@id='shipActivity']/div/div/table/tbody").findElements(By.tagName("tr"));
                 for (WebElement trIter : trList) {
                     List<WebElement> td = trIter.findElements(By.tagName("td"));
