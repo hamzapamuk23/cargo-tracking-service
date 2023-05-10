@@ -8,6 +8,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.annotation.Nonnull;
@@ -55,7 +56,7 @@ public class CargoTracking{
     private String explanation;
 
     @ManyToOne()
-    @RestResource(exported = false)
+    @JsonBackReference
     @JoinColumn(name = "order_id", nullable = false)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Order order;

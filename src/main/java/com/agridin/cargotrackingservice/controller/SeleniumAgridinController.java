@@ -20,10 +20,9 @@ public class SeleniumAgridinController {
 
     private SeleniumAgridinService seleniumAgridinService;
 
-    // @PostMapping("/login")
-    // public void loginAgridin(@RequestBody LoginDto loginDto){
-    //     seleniumAgridinService.loginAgridin(new ChromeDriver(), loginDto);
-    // }
+    @PostMapping("/login")
+    public void loginAgridin(@RequestBody LoginDto loginDto){
+        seleniumAgridinService.agridinLogin(loginDto);    }
 
     
 }
