@@ -92,8 +92,8 @@ public class SeleniumAgridinService {
     }
 
     public ChromeDriver getChromeDriver(){
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        // //ChromeOptions options = new ChromeOptions();
+        // //options.addArguments("--headless");
         return new ChromeDriver();
     }
 
